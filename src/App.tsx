@@ -1,10 +1,14 @@
-import FinalForm from "components/FinalForm";
+import FinalForm, { Idata } from "components/FinalForm";
 import FormikForm from "components/FormikForm";
 import SimpleForm from "components/SimpleForm";
 import { useState } from "react";
 
 const App = (): JSX.Element => {
   const [form, setForm] = useState<"simple" | "formik" | "final">("simple");
+
+  const formHandler = (data: Idata) => {
+    console.log(data);
+  };
 
   return (
     <main style={{ display: "flex", justifyContent: "space-around" }}>
@@ -16,7 +20,7 @@ const App = (): JSX.Element => {
       </div>
       {form === "simple" && <SimpleForm />}
       {form === "formik" && <FormikForm />}
-      {form === "final" && <FinalForm />}
+      {form === "final" && <FinalForm handler={formHandler} />}
     </main>
   );
 };
