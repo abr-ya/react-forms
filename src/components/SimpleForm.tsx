@@ -14,6 +14,7 @@ const SimpleForm = () => {
     <form onSubmit={onSubmit}>
       <header>
         <img width="60" src={logIn} alt="log in" />
+        <h2>SimpleForm</h2>
       </header>
       <label htmlFor="login">Login</label>
       <input
